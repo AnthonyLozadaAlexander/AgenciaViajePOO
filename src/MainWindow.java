@@ -24,6 +24,9 @@ public class MainWindow extends javax.swing.JFrame {
 	setTitle("Formulario Agencia Viajes");
 	MontañaP.setVisible(false);
 	PlayaP.setVisible(false);
+        txtDestino.setEnabled(false);
+        txtDias.setEnabled(false);
+        txtPrecioBase.setEnabled(false);
     }
 
     /**
@@ -35,7 +38,7 @@ public class MainWindow extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        fondoP = new javax.swing.JPanel();
         Titulo = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         cboSeleccion = new javax.swing.JComboBox<>();
@@ -47,6 +50,10 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txtSeguroPorcentaje = new javax.swing.JTextField();
         PlayaP = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        txtImpuestoTuristico = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        txtDescuentoTuristico = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtHistorial = new javax.swing.JTextArea();
         txtDestino = new javax.swing.JTextField();
@@ -62,8 +69,8 @@ public class MainWindow extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        fondoP.setBackground(new java.awt.Color(255, 255, 255));
+        fondoP.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Titulo.setBackground(new java.awt.Color(255, 255, 239));
         Titulo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -72,7 +79,7 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel1.setText("Agencia De Viajes");
         Titulo.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 300, -1));
 
-        jPanel1.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 110));
+        fondoP.add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 110));
 
         cboSeleccion.setFont(new java.awt.Font("Cascadia Mono", 1, 18)); // NOI18N
         cboSeleccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Montaña", "Playa" }));
@@ -81,7 +88,7 @@ public class MainWindow extends javax.swing.JFrame {
                 cboSeleccionActionPerformed(evt);
             }
         });
-        jPanel1.add(cboSeleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 160, 40));
+        fondoP.add(cboSeleccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 160, 40));
 
         MontañaP.setBackground(new java.awt.Color(255, 255, 255));
         MontañaP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -117,41 +124,62 @@ public class MainWindow extends javax.swing.JFrame {
         });
         MontañaP.add(txtSeguroPorcentaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 140, -1));
 
-        jPanel1.add(MontañaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 370, 500));
+        fondoP.add(MontañaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 370, 500));
 
         PlayaP.setBackground(new java.awt.Color(255, 255, 255));
         PlayaP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         PlayaP.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(PlayaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 370, 500));
+
+        jLabel9.setText("Impuesto Turistico");
+        PlayaP.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
+
+        txtImpuestoTuristico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtImpuestoTuristicoActionPerformed(evt);
+            }
+        });
+        PlayaP.add(txtImpuestoTuristico, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 140, -1));
+
+        jLabel10.setText("Descuento Turistico");
+        PlayaP.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
+
+        txtDescuentoTuristico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDescuentoTuristicoActionPerformed(evt);
+            }
+        });
+        PlayaP.add(txtDescuentoTuristico, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 140, -1));
+
+        fondoP.add(PlayaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 370, 500));
 
         txtHistorial.setColumns(20);
         txtHistorial.setRows(5);
         jScrollPane1.setViewportView(txtHistorial);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 110, 320, 560));
-        jPanel1.add(txtDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 170, -1));
+        fondoP.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 110, 320, 560));
+        fondoP.add(txtDestino, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 170, -1));
 
         jLabel2.setFont(new java.awt.Font("Cascadia Mono", 1, 18)); // NOI18N
         jLabel2.setText("Lugar");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
+        fondoP.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Cascadia Mono", 1, 18)); // NOI18N
         jLabel3.setText("Dias");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, -1, -1));
-        jPanel1.add(txtDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 170, -1));
+        fondoP.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, -1, -1));
+        fondoP.add(txtDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 170, -1));
 
         jLabel4.setFont(new java.awt.Font("Cascadia Mono", 1, 18)); // NOI18N
         jLabel4.setText("Precio Base");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, -1, -1));
-        jPanel1.add(txtPrecioBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 170, -1));
+        fondoP.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, -1, -1));
+        fondoP.add(txtPrecioBase, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 170, -1));
 
         btnSalir.setFont(new java.awt.Font("Cascadia Mono", 1, 18)); // NOI18N
         btnSalir.setText("Salir");
-        jPanel1.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 520, -1, -1));
+        fondoP.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 520, -1, -1));
 
         btnLimpiar.setFont(new java.awt.Font("Cascadia Mono", 1, 18)); // NOI18N
         btnLimpiar.setText("Limpiar");
-        jPanel1.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, -1, -1));
+        fondoP.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, -1, -1));
 
         btnCalcular.setFont(new java.awt.Font("Cascadia Mono", 1, 18)); // NOI18N
         btnCalcular.setText("Calcular");
@@ -160,9 +188,9 @@ public class MainWindow extends javax.swing.JFrame {
                 btnCalcularActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 130, -1));
+        fondoP.add(btnCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 440, 130, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 670));
+        getContentPane().add(fondoP, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 670));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -172,14 +200,23 @@ public class MainWindow extends javax.swing.JFrame {
 	if(indexSeleccion == 1){
 	    MontañaP.setVisible(true);
 	    PlayaP.setVisible(false);
+            txtDestino.setEnabled(true);
+            txtDias.setEnabled(true);
+            txtPrecioBase.setEnabled(true);
 	}
 	else if(indexSeleccion == 2){
 	    PlayaP.setVisible(true);
 	    MontañaP.setVisible(false);
+            txtDestino.setEnabled(true);
+            txtDias.setEnabled(true);
+            txtPrecioBase.setEnabled(true);
 	}
 	else if(indexSeleccion == 0){
 	    MontañaP.setVisible(false);
 	    PlayaP.setVisible(false);
+            txtDestino.setEnabled(false);
+            txtDias.setEnabled(false);
+            txtPrecioBase.setEnabled(false);
 	}
     }//GEN-LAST:event_cboSeleccionActionPerformed
 
@@ -198,7 +235,24 @@ public class MainWindow extends javax.swing.JFrame {
 	String tipoViaje = (String) cboSeleccion.getSelectedItem();
 	
 	if(("Montaña").equals(tipoViaje)){
-	    
+	    if(txtCostoGuia.getText().trim().isEmpty() || txtAlquilerEquipo.getText().trim().isEmpty() || txtSeguroPorcentaje.getText().trim().isEmpty()){
+                JOptionPane.showMessageDialog(this, "No Puede Estar Vacio Los Campos", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            
+            double costoGuia = Double.parseDouble(txtCostoGuia.getText());
+            double alquilerEquipo = Double.parseDouble(txtAlquilerEquipo.getText());
+            double seguroPorcentaje = Double.parseDouble(txtSeguroPorcentaje.getText());
+            
+            Montana montana = new Montana();
+            
+            montana.setDestino(destino);
+            montana.setDias(dias);
+            montana.setPrecioBase(precioBase);
+            montana.setCostoGuia(costoGuia);
+            montana.setAlquilerEquipo(alquilerEquipo);
+            montana.setSeguroPorcentaje(seguroPorcentaje);
+            
 	}
 	
     }//GEN-LAST:event_btnCalcularActionPerformed
@@ -214,6 +268,14 @@ public class MainWindow extends javax.swing.JFrame {
     private void txtSeguroPorcentajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSeguroPorcentajeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSeguroPorcentajeActionPerformed
+
+    private void txtImpuestoTuristicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtImpuestoTuristicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtImpuestoTuristicoActionPerformed
+
+    private void txtDescuentoTuristicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescuentoTuristicoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDescuentoTuristicoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -248,20 +310,24 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JComboBox<String> cboSeleccion;
+    private javax.swing.JPanel fondoP;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField txtAlquilerEquipo;
     private javax.swing.JTextField txtCostoGuia;
+    private javax.swing.JTextField txtDescuentoTuristico;
     private javax.swing.JTextField txtDestino;
     private javax.swing.JTextField txtDias;
     private javax.swing.JTextArea txtHistorial;
+    private javax.swing.JTextField txtImpuestoTuristico;
     private javax.swing.JTextField txtPrecioBase;
     private javax.swing.JTextField txtSeguroPorcentaje;
     // End of variables declaration//GEN-END:variables
