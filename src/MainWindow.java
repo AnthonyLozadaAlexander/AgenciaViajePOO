@@ -179,6 +179,11 @@ public class MainWindow extends javax.swing.JFrame {
 
         btnLimpiar.setFont(new java.awt.Font("Cascadia Mono", 1, 18)); // NOI18N
         btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
         fondoP.add(btnLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 480, -1, -1));
 
         btnCalcular.setFont(new java.awt.Font("Cascadia Mono", 1, 18)); // NOI18N
@@ -220,7 +225,32 @@ public class MainWindow extends javax.swing.JFrame {
 	}
     }//GEN-LAST:event_cboSeleccionActionPerformed
 
+    public void Limpiar(){
+        int opcion = JOptionPane.showConfirmDialog(this, "Desea Limpiar El Formulario?", "Aviso", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+
+        if (opcion == JOptionPane.YES_OPTION) {
+            int confirmar = JOptionPane.showConfirmDialog(this, "Aviso: Se Borraran El Historial Del Formulario", "Aviso", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+            if (confirmar == JOptionPane.YES_OPTION) {
+                txtDestino.setText("");
+                txtDias.setText("");
+                txtPrecioBase.setText("");
+                txtCostoGuia.setText("");
+                txtAlquilerEquipo.setText("");
+                txtSeguroPorcentaje.setText("");
+                txtHistorial.setText("");
+            }
+
+            return;
+        }
+    }
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        
+        String tipoViaje = (String) cboSeleccion.getSelectedItem();
+        
+        if(("Seleccione").equals(tipoViaje)){
+            JOptionPane.showMessageDialog(this, "Error: Debe Seleccionar Un Tipo De Viaje", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         
 	if(txtDestino.getText().trim().isEmpty() || txtDias.getText().trim().isEmpty() || txtPrecioBase.getText().trim().isEmpty()){
 	    JOptionPane.showMessageDialog(this, "Error: Los Campos De Texto No Pueden Estar Vacios", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -232,7 +262,7 @@ public class MainWindow extends javax.swing.JFrame {
 	int dias = Integer.parseInt(txtDias.getText());
 	double precioBase = Double.parseDouble(txtPrecioBase.getText());
 	
-	String tipoViaje = (String) cboSeleccion.getSelectedItem();
+	
 	
 	if(("Montaña").equals(tipoViaje)){
 	    if(txtCostoGuia.getText().trim().isEmpty() || txtAlquilerEquipo.getText().trim().isEmpty() || txtSeguroPorcentaje.getText().trim().isEmpty()){
@@ -244,6 +274,11 @@ public class MainWindow extends javax.swing.JFrame {
             double alquilerEquipo = Double.parseDouble(txtAlquilerEquipo.getText());
             double seguroPorcentaje = Double.parseDouble(txtSeguroPorcentaje.getText());
             
+            if(costoGuia < 0 || alquilerEquipo < 0 || seguroPorcentaje < 0){
+                JOptionPane.showMessageDialog(this, "Error: Los Campos No Pueden Ser Menores a 0", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            
             Montana montana = new Montana();
             
             montana.setDestino(destino);
@@ -252,6 +287,11 @@ public class MainWindow extends javax.swing.JFrame {
             montana.setCostoGuia(costoGuia);
             montana.setAlquilerEquipo(alquilerEquipo);
             montana.setSeguroPorcentaje(seguroPorcentaje);
+            montana.SubTotal();
+            montana.Seguro();
+            montana.Total();
+            
+            txtHistorial.append(montana.resumen());
             
 	}
 	
@@ -276,6 +316,10 @@ public class MainWindow extends javax.swing.JFrame {
     private void txtDescuentoTuristicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescuentoTuristicoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDescuentoTuristicoActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        Limpiar();
+    }//GEN-LAST:event_btnLimpiarActionPerformed
 
     /**
      * @param args the command line arguments
