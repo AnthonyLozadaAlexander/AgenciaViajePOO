@@ -33,7 +33,7 @@ public class Paquete {
     
     public void setDias(int dias){
 	if(dias > 0){
-        this.dias = dias;
+            this.dias = dias;
 	}
 	else{
 	    this.dias = 0;
