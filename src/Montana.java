@@ -39,7 +39,7 @@ public class Montana extends Paquete{
     }
     
     public void setSeguroPorcentaje(double seguroPorcentaje){
-	this.seguroPorcentaje = seguroPorcentaje;
+	this.seguroPorcentaje = seguroPorcentaje / 100;
     }
     
     public double SubTotal(){
@@ -55,7 +55,7 @@ public class Montana extends Paquete{
     }
     
     public String resumen(){
-	return super.mostrarInfo() + "\nCosto Guia: " + costoGuia + "\nAlquiler Equipo: " + alquilerEquipo + "\nSeguro Porcentaje: " + seguroPorcentaje + "\n"; 
+	return super.mostrarInfo() + "\nCosto Guia: " + costoGuia + "\nAlquiler Equipo: " + alquilerEquipo + "\nSeguro Porcentaje: " + seguroPorcentaje + "\n" + "Precio: " + getPrecioBase() + "\n" + "Seguro: " + Seguro() + "\n" + "Total: " + Total() + "\n" + "-----------------------------------------"; 
     }
     
     
