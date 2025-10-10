@@ -41,7 +41,7 @@ public class Paquete {
     }
     
     public void setPrecioBase(double precioBase){
-	if(precioBase < 0){
+	if(precioBase > 0){
 	    this.precioBase = precioBase;
 	}
 	else{
@@ -55,6 +55,6 @@ public class Paquete {
     
     
     public String mostrarInfo(){
-        return "\nLugar: " + destino + "\nDias: " + dias + "\nPrecio: " + precioBase + "\n";
+        return "----------------- Datos ----------------- " + "\nLugar: " + destino + "\nDias: " + dias + "\nPrecio: " + precioBase + "\n";
     }
 }
