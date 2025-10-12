@@ -5,13 +5,12 @@ import javax.swing.JOptionPane;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
 /**
  *
  * @author PC 15
  */
 public class MainWindow extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainWindow.class.getName());
 
     /**
@@ -19,11 +18,11 @@ public class MainWindow extends javax.swing.JFrame {
      */
     public MainWindow() {
         initComponents();
-	setLocationRelativeTo(null);
-	setResizable(false);
-	setTitle("Formulario Agencia Viajes");
-	MontañaP.setVisible(false);
-	PlayaP.setVisible(false);
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setTitle("Formulario Agencia Viajes");
+        MontañaP.setVisible(false);
+        PlayaP.setVisible(false);
         txtDestino.setEnabled(false);
         txtDias.setEnabled(false);
         txtPrecioBase.setEnabled(false);
@@ -50,6 +49,7 @@ public class MainWindow extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txtSeguroPorcentaje = new javax.swing.JTextField();
         PlayaP = new javax.swing.JPanel();
+        chk_TodoIncluido = new javax.swing.JCheckBox();
         jLabel9 = new javax.swing.JLabel();
         txtImpuestoTuristico = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
@@ -99,30 +99,30 @@ public class MainWindow extends javax.swing.JFrame {
                 txtCostoGuiaActionPerformed(evt);
             }
         });
-        MontañaP.add(txtCostoGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 140, -1));
+        MontañaP.add(txtCostoGuia, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 140, -1));
 
         jLabel5.setText("Costo Guia:");
-        MontañaP.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, -1, -1));
+        MontañaP.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, -1, -1));
 
         jLabel6.setText("AlquilerEquipo");
-        MontañaP.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, -1, -1));
+        MontañaP.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, -1, -1));
 
         txtAlquilerEquipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtAlquilerEquipoActionPerformed(evt);
             }
         });
-        MontañaP.add(txtAlquilerEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 140, -1));
+        MontañaP.add(txtAlquilerEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 140, -1));
 
         jLabel7.setText("Seguro Porcentaje");
-        MontañaP.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
+        MontañaP.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, -1, -1));
 
         txtSeguroPorcentaje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSeguroPorcentajeActionPerformed(evt);
             }
         });
-        MontañaP.add(txtSeguroPorcentaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 140, -1));
+        MontañaP.add(txtSeguroPorcentaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 290, 140, -1));
 
         fondoP.add(MontañaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 370, 500));
 
@@ -130,25 +130,33 @@ public class MainWindow extends javax.swing.JFrame {
         PlayaP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         PlayaP.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        chk_TodoIncluido.setText("TodoIncluido");
+        chk_TodoIncluido.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chk_TodoIncluidoActionPerformed(evt);
+            }
+        });
+        PlayaP.add(chk_TodoIncluido, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, -1, -1));
+
         jLabel9.setText("Impuesto Turistico");
-        PlayaP.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
+        PlayaP.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, -1, -1));
 
         txtImpuestoTuristico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtImpuestoTuristicoActionPerformed(evt);
             }
         });
-        PlayaP.add(txtImpuestoTuristico, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, 140, -1));
+        PlayaP.add(txtImpuestoTuristico, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 140, -1));
 
         jLabel10.setText("Descuento Turistico");
-        PlayaP.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 200, -1, -1));
+        PlayaP.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 190, -1, -1));
 
         txtDescuentoTuristico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDescuentoTuristicoActionPerformed(evt);
             }
         });
-        PlayaP.add(txtDescuentoTuristico, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, 140, -1));
+        PlayaP.add(txtDescuentoTuristico, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 140, -1));
 
         fondoP.add(PlayaP, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 370, 500));
 
@@ -202,30 +210,28 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void cboSeleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboSeleccionActionPerformed
         int indexSeleccion = cboSeleccion.getSelectedIndex();
-	if(indexSeleccion == 1){
-	    MontañaP.setVisible(true);
-	    PlayaP.setVisible(false);
+        if (indexSeleccion == 1) {
+            MontañaP.setVisible(true);
+            PlayaP.setVisible(false);
             txtDestino.setEnabled(true);
             txtDias.setEnabled(true);
             txtPrecioBase.setEnabled(true);
-	}
-	else if(indexSeleccion == 2){
-	    PlayaP.setVisible(true);
-	    MontañaP.setVisible(false);
+        } else if (indexSeleccion == 2) {
+            PlayaP.setVisible(true);
+            MontañaP.setVisible(false);
             txtDestino.setEnabled(true);
             txtDias.setEnabled(true);
             txtPrecioBase.setEnabled(true);
-	}
-	else if(indexSeleccion == 0){
-	    MontañaP.setVisible(false);
-	    PlayaP.setVisible(false);
+        } else if (indexSeleccion == 0) {
+            MontañaP.setVisible(false);
+            PlayaP.setVisible(false);
             txtDestino.setEnabled(false);
             txtDias.setEnabled(false);
             txtPrecioBase.setEnabled(false);
-	}
+        }
     }//GEN-LAST:event_cboSeleccionActionPerformed
 
-    public void Limpiar(){
+    public void Limpiar() {
         int opcion = JOptionPane.showConfirmDialog(this, "Desea Limpiar El Formulario?", "Aviso", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
 
         if (opcion == JOptionPane.YES_OPTION) {
@@ -237,6 +243,8 @@ public class MainWindow extends javax.swing.JFrame {
                 txtCostoGuia.setText("");
                 txtAlquilerEquipo.setText("");
                 txtSeguroPorcentaje.setText("");
+                txtImpuestoTuristico.setText("");
+                txtDescuentoTuristico.setText("");
                 txtHistorial.setText("");
             }
 
@@ -244,43 +252,41 @@ public class MainWindow extends javax.swing.JFrame {
         }
     }
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        
+
         String tipoViaje = (String) cboSeleccion.getSelectedItem();
-        
-        if(("Seleccione").equals(tipoViaje)){
+
+        if (("Seleccione").equals(tipoViaje)) {
             JOptionPane.showMessageDialog(this, "Error: Debe Seleccionar Un Tipo De Viaje", "ERROR", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
-	if(txtDestino.getText().trim().isEmpty() || txtDias.getText().trim().isEmpty() || txtPrecioBase.getText().trim().isEmpty()){
-	    JOptionPane.showMessageDialog(this, "Error: Los Campos De Texto No Pueden Estar Vacios", "ERROR", JOptionPane.ERROR_MESSAGE);
-	    return;
-	}
-	
-		
-	String destino = txtDestino.getText();
-	int dias = Integer.parseInt(txtDias.getText());
-	double precioBase = Double.parseDouble(txtPrecioBase.getText());
-	
-	
-	
-	if(("Montaña").equals(tipoViaje)){
-	    if(txtCostoGuia.getText().trim().isEmpty() || txtAlquilerEquipo.getText().trim().isEmpty() || txtSeguroPorcentaje.getText().trim().isEmpty()){
+
+        if (txtDestino.getText().trim().isEmpty() || txtDias.getText().trim().isEmpty() || txtPrecioBase.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Error: Los Campos De Texto No Pueden Estar Vacios", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        String destino = txtDestino.getText();
+        int dias = Integer.parseInt(txtDias.getText());
+        double precioBase = Double.parseDouble(txtPrecioBase.getText());
+        boolean todoIncluido = false;
+
+        if (("Montaña").equals(tipoViaje)) {
+            if (txtCostoGuia.getText().trim().isEmpty() || txtAlquilerEquipo.getText().trim().isEmpty() || txtSeguroPorcentaje.getText().trim().isEmpty()) {
                 JOptionPane.showMessageDialog(this, "No Puede Estar Vacio Los Campos", "ERROR", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            
+
             double costoGuia = Double.parseDouble(txtCostoGuia.getText());
             double alquilerEquipo = Double.parseDouble(txtAlquilerEquipo.getText());
             double seguroPorcentaje = Double.parseDouble(txtSeguroPorcentaje.getText());
-            
-            if(costoGuia < 0 || alquilerEquipo < 0 || seguroPorcentaje < 0){
+
+            if (costoGuia < 0 || alquilerEquipo < 0 || seguroPorcentaje < 0) {
                 JOptionPane.showMessageDialog(this, "Error: Los Campos No Pueden Ser Menores a 0", "ERROR", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            
+
             Montana montana = new Montana();
-            
+
             montana.setDestino(destino);
             montana.setDias(dias);
             montana.setPrecioBase(precioBase);
@@ -290,11 +296,47 @@ public class MainWindow extends javax.swing.JFrame {
             montana.SubTotal();
             montana.Seguro();
             montana.Total();
-            
+
             txtHistorial.append(montana.resumen());
+
+        }
+
+        if ("Playa".equals(tipoViaje)) {
+            if (txtImpuestoTuristico.getText().trim().isEmpty() || txtDescuentoTuristico.getText().trim().isEmpty()) {
+                JOptionPane.showMessageDialog(this, "No Puede Estar Vacio Los Campos", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            double ImpuestoTuristico = Double.parseDouble(txtImpuestoTuristico.getText());
+            double DescuentoTuristico = Double.parseDouble(txtDescuentoTuristico.getText());
             
-	}
-	
+
+            if (ImpuestoTuristico < 0 || DescuentoTuristico < 0) {
+                JOptionPane.showMessageDialog(this, "Error: Los Campos No Pueden Ser Menores a 0", "ERROR", JOptionPane.ERROR_MESSAGE);
+                return;
+
+            }
+            
+            if(chk_TodoIncluido.isSelected()){
+                todoIncluido = true;
+                JOptionPane.showMessageDialog(this, "Usted Ha Elegido Todo Incluido!"+"\n"+"Por lo tanto se le aumentara 200$ extra", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+            }
+            
+            Playa playa = new Playa();
+            playa.setDestino(destino);
+            playa.setDias(dias);
+            playa.setPrecioBase(precioBase);
+            playa.setImpuestoTuristico(ImpuestoTuristico);
+            playa.setDescuentoTemporada(DescuentoTuristico);
+            playa.calcularImpuesto();
+            playa.calcularDescuento();
+            playa.calcularTotal(todoIncluido);
+            
+            txtHistorial.append(playa.resumenInfo());
+            
+            
+        }
+
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void txtAlquilerEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAlquilerEquipoActionPerformed
@@ -320,6 +362,10 @@ public class MainWindow extends javax.swing.JFrame {
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         Limpiar();
     }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void chk_TodoIncluidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chk_TodoIncluidoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chk_TodoIncluidoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -354,6 +400,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JComboBox<String> cboSeleccion;
+    private javax.swing.JCheckBox chk_TodoIncluido;
     private javax.swing.JPanel fondoP;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
